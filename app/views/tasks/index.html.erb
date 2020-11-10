@@ -1,0 +1,29 @@
+<h1>My tasks</h1>
+
+
+<div class ="container">
+  <% @tasks.each do |task| %>
+    <% if task.completed == true %>
+      <div class="form-check">
+  <input type="checkbox" class="form-check-input" id="materialCheckedDisabled" checked="checked2" disabled>
+  <label class="form-check-label" for="materialCheckedDisabled2"><%= link_to task.title,task_path(task) %></label>
+</div>
+
+ <% else%>
+<div class="form-check">
+  <input type="checkbox" class="form-check-input" id="materialUncheckedDisabled2" disabled>
+  <label class="form-check-label" for="materialUncheckedDisabled2"><%= link_to task.title,task_path(task) %></label>
+</div>
+</div>
+
+
+<% end %>
+<% end %>
+<div class="link">
+<P>  </P>
+<P>  </P>
+<P>  </P>
+<%= link_to "Add a new path ", new_path %>
+</div>
+
+

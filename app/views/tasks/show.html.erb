@@ -1,0 +1,30 @@
+
+
+<div class ="container">
+    <% if @task.completed  == true %>
+      <h2><%= @task.details %></h2>
+
+      <div class="form-check">
+  <input type="checkbox" class="form-check-input" id="materialCheckedDisabled" checked="checked2" disabled>
+  <label class="form-check-label" for="materialCheckedDisabled2">Task is completed </label>
+</div>
+
+ <% else%>
+   <h2><%= @task.details %></h2>
+<div class="form-check">
+  <input type="checkbox" class="form-check-input" id="materialUncheckedDisabled2" disabled>
+  <label class="form-check-label" for="materialUncheckedDisabled2">Task is not completed yet </label>
+</div>
+</div>
+
+
+
+<% end %>
+<div class="link">
+<P>  </P>
+<P>  </P>
+<P>  </P>
+<%= link_to "Go back to restaurants", tasks_path %>
+<%= link_to "Delete", task_path(@task), method: :delete, data: {confirm: "Are you sure?"} %>
+
+</div>
